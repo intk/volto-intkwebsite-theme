@@ -1,7 +1,69 @@
 /*******************************
-        Theme overrides
+        INTK Theme Overrides
 *******************************/
 
-body {
+#page-document, #page-edit {
     font-weight: @normal;
+    -webkit-font-smoothing: @bodyFontSmoothing;
+}
+
+/*******************************
+             Text
+*******************************/
+
+#page-document, #page-edit {
+    p, li {
+        font-size: @textSize;
+        line-height: @textLineHeight;
+    }
+
+    h2, h3, h4, h5, h6 {
+        text-transform: @headingsTextTransform;
+        color: @headingsFontColor;
+        font-family: @headingsFont;
+        font-weight: @headingsFontWeight;
+        line-height: @headingsLineHeight;
+    }
+
+    a {
+        border-bottom: @linkBorderBottom;
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus {
+            border-bottom: @linkHoverBorderBottom;
+            text-decoration: @linkHoverUnderline;
+        }
+    }
+
+    blockquote {
+        color: @blockquoteColor;
+        margin: @blockquoteMargin;
+        font-weight: @blockquoteFontWeight;
+        font-size: @blockquoteFontSize;
+        width: @blockquoteWidth;
+        background: @blockquoteBackground;
+        line-height: @blockquoteLineHeight;
+        border-left: @blockquoteBorderLeft;
+        padding-left: @blockquotePaddingLeft;
+        padding-right: @blockquotePaddingRight;
+        padding-top: @blockquotePaddingTop;
+        padding-bottom: @blockquotePaddingBottom;
+        margin-bottom: @blockquoteMarginBottom;
+        float: @blockquoteFloat;
+        letter-spacing: @blockquoteLetterSpacing;
+    }
+
+    .block.html {
+        margin-bottom: @htmlBlockMarginBottom;
+    }
+}
+
+#page-document, #content {
+    > h1.documentFirstHeading {
+        font-family: @headingsFont;
+        font-weight: @headingsFontWeight;
+        color: @primaryColor;
+        text-transform: @headingsTextTransform;
+    }
 }

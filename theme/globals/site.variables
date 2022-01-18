@@ -1,25 +1,45 @@
 /*******************************
-        Theme variables
+      INTK Theme Variables
 *******************************/
+
+@bodyFontSmoothing: antialiased;
 
 /*-------------------
        Fonts
 --------------------*/
 @fontName: "Lato";
+@secondaryFontName: "Montserrat";
 @googleFontSizes: '300,400';
+@googleSecondaryFontSizes: '400;700';
 @normal: 300;
+@medium: 400;
+@bold: 700;
+
+@headingsFont: @secondaryFontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googleFontRequest: '@{fontName}:@{googleFontSizes}|@{secondaryFontName}:@{googleSecondaryFontSizes}';
 
 /*-------------------
       Site Colors
 --------------------*/
 @black: #242424;
 @gray: #999999;
+@darkgray: #666666;
+@lightgray: #cccccc;
 
 /*-------------------
       Base Sizes
 --------------------*/
 @emSize: 16px;
 @fontSize: 16px;
+
+/*-------------------
+      Body text
+--------------------*/
+
+@textSize: 20px;
+@textLineHeight: 1.5;
+@htmlBlockMarginBottom: 0px;
 
 /*-------------------
     Brand Colors
@@ -31,3 +51,48 @@
         Page
 --------------------*/
 @textColor: @gray;
+
+/*--------------
+  Page Heading
+---------------*/
+@headingsFontColor: @black;
+@headingsFontWeight: @bold;
+@headingsLineHeight: 1.1;
+@headingsTextTransform: uppercase;
+
+@h2: 22px;
+@h3: 20px;
+@h4: 18px;
+@h5: 15px;
+@h6: 12px;
+
+/*-------------------
+       Links
+--------------------*/
+@linkColor: @primaryColor;
+@linkUnderline: none;
+@linkHoverColor: @primaryColor;
+@linkBorderBottomSize: 1px;
+@linkHoverBorderBottomSize: 0px;
+@linkBorderBottom: @linkBorderBottomSize solid @lightgray;
+@linkHoverBorderBottom: @linkHoverBorderBottomSize solid @lightgray;
+@linkHoverUnderline: underline;
+
+/*-------------------
+      Blockquote
+--------------------*/
+@blockquoteColor: @darkgray;
+@blockquoteMargin: 0 auto;
+@blockquoteFontWeight: @normal;
+@blockquoteFontSize: 30px;
+@blockquoteWidth: auto;
+@blockquoteBackground: none;
+@blockquoteLineHeight: 45px;
+@blockquoteBorderLeft: 2px solid @lightgray;
+@blockquotePaddingLeft: 20px;
+@blockquotePaddingRight: 20px;
+@blockquotePaddingTop: 0px;
+@blockquotePaddingBottom: 5px;
+@blockquoteMarginBottom: 28px;
+@blockquoteFloat: none;
+@blockquoteLetterSpacing: 0.05em;
