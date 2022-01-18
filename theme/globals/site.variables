@@ -10,14 +10,13 @@
 @fontName: "Lato";
 @secondaryFontName: "Montserrat";
 @googleFontSizes: '300,400';
-@googleSecondaryFontSizes: '400;700';
+@googleSecondaryFontSizes: '400';
+@headingsFont: @secondaryFontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@googleFontRequest: '@{fontName}:@{googleFontSizes}|@{secondaryFontName}:@{googleSecondaryFontSizes}';
+
 @normal: 300;
 @medium: 400;
 @bold: 700;
-
-@headingsFont: @secondaryFontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-
-@googleFontRequest: '@{fontName}:@{googleFontSizes}|@{secondaryFontName}:@{googleSecondaryFontSizes}';
 
 /*-------------------
       Site Colors
@@ -36,10 +35,10 @@
 /*-------------------
       Body text
 --------------------*/
-
 @textSize: 20px;
 @textLineHeight: 1.5;
 @htmlBlockMarginBottom: 0px;
+@contentDisplayTitleDescription: none;
 
 /*-------------------
     Brand Colors
@@ -59,7 +58,6 @@
 @headingsFontWeight: @bold;
 @headingsLineHeight: 1.1;
 @headingsTextTransform: uppercase;
-
 @h2: 22px;
 @h3: 20px;
 @h4: 18px;

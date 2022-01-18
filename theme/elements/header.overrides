@@ -1,0 +1,83 @@
+/*******************************
+      INTK Theme Overrides
+*******************************/
+
+div[role="navigation"].breadcrumbs {
+    display: @displayBreadcrumps;
+}
+
+.ui.basic.segment.header-wrapper {
+    font-weight: @normal;
+    -webkit-font-smoothing: @bodyFontSmoothing;
+
+    background-color: @headerBackgroundColor;
+    padding-top: @headerPaddingTop;
+    padding-bottom: @headerPaddingBottom;
+    margin-bottom: @headerMarginBottom;
+
+    .logo {
+        width: @logoWidth;
+    }
+
+    .logo-nav-wrapper { 
+        width: @logoNavWidth;
+        flex-grow: @logoNavFlexGrow;
+        margin-bottom: @logoNavMarginBottom;
+    }
+
+    .title-nav-wrapper {
+        display: @titleNavDisplay;
+        flex-grow: @titleNavFlexGrow;
+        flex-wrap: @titleNavFlexWrap;
+        width: @titleNavWidth;
+        padding-top: @titleNavPaddingTop;
+    }
+
+    h1.documentFirstHeading {
+        font-family: @headingsFont;
+        font-weight: @headingsFontWeight;
+        color: @primaryColor;
+        text-transform: @headingsTextTransform;
+
+        font-size: @titleNavH1FontSize;
+        font-weight: @titleNavH1FontWeight;
+        letter-spacing: @titleNavH1LetterSpacing;
+        
+        margin-bottom: @titleNavH1MarginBottom;
+        padding-bottom: @titleNavH1PaddingBottom;
+        margin-top: @titleNavH1MarginTop;
+        border-bottom: @titleNavH1BorderBottom;
+        width: @titleNavH1Width;
+        line-height: @titleNavH1LineHeight;
+
+        text-align: @titleNavH1TextAlign;
+
+        &:before {
+            display: @titleNavH1BeforeDisplay;
+        }
+    }
+
+    p.documentDescription {
+        text-align: @descriptionNavTextAlign;
+        font-weight: @descriptionNavFontWeight;
+        font-size: @descriptionNavFontSize;
+        color: @descriptionNavColor;
+        margin-bottom: @descriptionNavMarginBottom;
+        width: @descriptionNavWidth;
+    }
+}
+
+/*-------------------
+    Mobile queries
+--------------------*/
+@media(max-width: 991px) {
+    .ui.basic.segment.header-wrapper {
+        h1.documentFirstHeading {
+            text-align: @titleNavTextAlignMobile;
+        }
+
+        p.documentDescription {
+            text-align: @descriptionNavTextAlignMobile;
+        }
+    }
+}

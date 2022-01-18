@@ -57,10 +57,15 @@
     .block.html {
         margin-bottom: @htmlBlockMarginBottom;
     }
+
+    h1.documentFirstHeading,
+    p.documentDescription {
+        display: @contentDisplayTitleDescription;
+    }
 }
 
-#page-document, #content {
-    > h1.documentFirstHeading {
+#page-document, #page-edit, #content {
+    h1.documentFirstHeading {
         font-family: @headingsFont;
         font-weight: @headingsFontWeight;
         color: @primaryColor;

@@ -3,13 +3,13 @@
 *******************************/
 
 @media only screen and (min-width: 1280px) {
-    body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed):not(.section-contents) .ui.container {
+    body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
       width: @containerMaxSize !important;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed):not(.section-contents) .ui.container {
+    body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
       width: @containerMaxSize !important;
     }
 }
