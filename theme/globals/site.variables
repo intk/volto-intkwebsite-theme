@@ -94,3 +94,29 @@
 @blockquoteMarginBottom: 28px;
 @blockquoteFloat: none;
 @blockquoteLetterSpacing: 0.05em;
+
+/*-------------------
+      Lead image
+--------------------*/
+@fullWidthImgRight: 0;
+@fullWidthImgLeft: 50%;
+@fullWidthImgTransform: translateX(-50%);
+@fullWidthImgWidth: 80vw;
+@fullWidthImgMarginLeft: 0px;
+@fullWidthImgMarginRight: 0px;
+@fullWidthImgMaxWidth: 960px;
+
+@editFullWidthImgRight: 0;
+@editFullWidthImgLeft: 0;
+@editFullWidthImgWidth: 100vw;
+@editFullWidthImgMarginLeft: 0px;
+@editFullWidthImgMarginRight: 0px;
+@editFullWidthImgMaxWidth: 960px;
+
+/*-------------------
+      Carousel
+--------------------*/
+@slideOverlayOpacity: 0;
+@sliderArrowBottom: 15px;
+@sliderArrowLeft: 15px;
+@sliderHeightMobile: 450px;

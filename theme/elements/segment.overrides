@@ -1,0 +1,14 @@
+/*******************************
+      INTK Theme Overrides
+*******************************/
+
+.ui.secondary.segment.sidebar-metadata-container img {
+    max-width: @segmentSideBarMetadataContainerImgMaxWidth;
+}
+
+@media(max-width: 991px) {
+    .ui.basic.segment.content-area {
+        padding-top: @segmentContentAreaPaddingTopMobile;
+        margin-top: @segmentContentAreaMarginTopMobile;
+    }
+}

@@ -1,0 +1,7 @@
+/*******************************
+      INTK Theme Variables
+*******************************/
+
+@segmentContentAreaPaddingTopMobile: 0px;
+@segmentContentAreaMarginTopMobile: 0px;
+@segmentSideBarMetadataContainerImgMaxWidth: 50%;

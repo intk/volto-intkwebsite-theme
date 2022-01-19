@@ -72,6 +72,8 @@ div[role="navigation"].breadcrumbs {
 --------------------*/
 @media(max-width: 991px) {
     .ui.basic.segment.header-wrapper {
+        margin-bottom: @headerMarginBottomMobile;
+
         h1.documentFirstHeading {
             text-align: @titleNavTextAlignMobile;
         }

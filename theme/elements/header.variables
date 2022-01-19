@@ -10,6 +10,7 @@
 @headerPaddingTop: 50px;
 @headerPaddingBottom: 53px;
 @headerMarginBottom: 25px;
+@headerMarginBottomMobile: 0px;
 @displayBreadcrumps: none;
 
 /*-------------------

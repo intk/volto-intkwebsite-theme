@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
@@ -17,6 +17,13 @@ import {
   hasBlocksData,
   getBaseUrl,
 } from '@plone/volto/helpers';
+
+const messages = defineMessages({
+  unknownBlock: {
+    id: 'Unknown Block',
+    defaultMessage: 'Unknown Block {block}',
+  },
+});
 
 /**
  * Component to display the default view.
@@ -30,6 +37,18 @@ const DefaultView = ({ content, intl, location }) => {
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
+      {content.preview_image && (
+        <div className="full-width">
+          <Image
+            className="full-width lead-image"
+            src={content.preview_image.scales.large.download}
+            loading="lazy"
+            alt={
+              content.preview_caption ? content.preview_caption : content.title
+            }
+          />
+        </div>
+      )}
       {map(content[blocksLayoutFieldname].items, (block) => {
         const Block =
           config.blocks.blocksConfig[
@@ -44,7 +63,11 @@ const DefaultView = ({ content, intl, location }) => {
             path={getBaseUrl(location?.pathname || '')}
           />
         ) : (
-          ''
+          <div key={block}>
+            {intl.formatMessage(messages.unknownBlock, {
+              block: content[blocksFieldname]?.[block]?.['@type'],
+            })}
+          </div>
         );
       })}
     </div>

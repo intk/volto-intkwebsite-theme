@@ -1,7 +1,6 @@
 /*******************************
         INTK Theme Overrides
 *******************************/
-
 #page-document, #page-edit {
     font-weight: @normal;
     -webkit-font-smoothing: @bodyFontSmoothing;
@@ -10,7 +9,6 @@
 /*******************************
              Text
 *******************************/
-
 #page-document, #page-edit {
     p, li {
         font-size: @textSize;
@@ -57,12 +55,15 @@
     .block.html {
         margin-bottom: @htmlBlockMarginBottom;
     }
+}
 
+#page-document {
     h1.documentFirstHeading,
     p.documentDescription {
         display: @contentDisplayTitleDescription;
     }
 }
+
 
 #page-document, #page-edit, #content {
     h1.documentFirstHeading {
@@ -70,5 +71,67 @@
         font-weight: @headingsFontWeight;
         color: @primaryColor;
         text-transform: @headingsTextTransform;
+    }
+}
+
+/*******************************
+        Lead image
+*******************************/
+@media only screen and (min-width: 1280px) {
+    body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
+      .full-width {
+        right: @fullWidthImgRight;
+        left: @fullWidthImgLeft;
+        transform: @fullWidthImgTransform;
+        width: @fullWidthImgWidth !important;
+        margin-left: @fullWidthImgMarginLeft !important;
+        margin-right: @fullWidthImgMarginRight !important;
+        max-width: @fullWidthImgMaxWidth !important;
+      }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
+        .full-width {
+            right: @fullWidthImgRight;
+            left: @fullWidthImgLeft;
+            transform: @fullWidthImgTransform;
+            width: @fullWidthImgWidth !important;
+            margin-left: @fullWidthImgMarginLeft !important;
+            margin-right: @fullWidthImgMarginRight !important;
+            max-width: @fullWidthImgMaxWidth !important;
+        }
+    }
+}
+
+#page-edit {
+    .full-width {
+        right: @editFullWidthImgRight;
+        left: @editFullWidthImgLeft;
+        width: @editFullWidthImgWidth !important;
+        margin-left: @editFullWidthImgMarginLeft !important;
+        margin-right: @editFullWidthImgMarginRight !important;
+        max-width: @editFullWidthImgMaxWidth !important;
+    }
+}
+
+/*******************************
+        Carousel
+*******************************/
+.full-width .slider-wrapper {
+    .slide-overlay {
+        opacity: @slideOverlayOpacity;
+    }
+
+    .slider-arrow {
+        bottom: @sliderArrowBottom;
+        left: @sliderArrowLeft;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider-wrapper .slider-slide .slide-img {
+        height: @sliderHeightMobile;
     }
 }
