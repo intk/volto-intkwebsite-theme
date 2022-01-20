@@ -5,3 +5,44 @@
 @segmentContentAreaPaddingTopMobile: 0px;
 @segmentContentAreaMarginTopMobile: 0px;
 @segmentSideBarMetadataContainerImgMaxWidth: 50%;
+
+/*-------------------
+      Footer
+--------------------*/
+@footerTextColor: #ffffff;
+@footerTextLineHeight: 1.1;
+
+@footerPadding: 40px 0 100px 0;
+@footerParagraphColor: @footerTextColor;
+@footerParagraphFontSize: 16px;
+@footerLineHeight: 30px;
+@footerMarginBottom: 0px;
+
+@footerLeftTitleFontSize: 18px;
+@footerLeftTitleColor: @footerTextColor;
+@footerLeftTitleFontWeight: @bold;
+@footerLeftTitleMarginBottom: 10px;
+@footerLeftTitleMarginTop: 10px;
+@footerLeftTitleLineHeight: @footerTextLineHeight;
+
+@footerRightTitleFontFamily: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@footerRightTitleFontSize: 14px;
+@footerRightTitleColor: @footerTextColor;
+@footerRightTitleFontWeight: @bold;
+@footerRightTitleTextTransform: uppercase;
+@footerRightTitleMarginBottom: 10px;
+@footerRightTitleMarginTop: 10px;
+@footerRightTitleLineHeight: @footerTextLineHeight;
+
+@footerLinkColor: @footerTextColor;
+@footerLinkTextDecoration: none;
+@footerLinkLineHeight: 25px;
+@footerLinkHoverTextDecoration: underline;
+
+@footerWrapperDisplay: flex;
+@footerWrapperJustifyContent: space-between;
+@footerAddressWidth: 65%;
+
+@footerUiSegmentPadding: 0px;
+@footerUiSegmentMargin: 0px;
+@footerUiContainerWidth: 100%;

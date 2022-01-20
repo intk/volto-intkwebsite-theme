@@ -12,3 +12,111 @@
         margin-top: @segmentContentAreaMarginTopMobile;
     }
 }
+
+/*-------------------
+      Footer
+--------------------*/
+#footer {
+    font-weight: @normal;
+    -webkit-font-smoothing: @bodyFontSmoothing;
+    padding: @footerPadding;
+
+    .ui.segment {
+        padding: @footerUiSegmentPadding;
+        margin: @footerUiSegmentMargin;
+    }
+
+    .ui.container {
+        width: @footerUiContainerWidth !important;
+    }
+
+    .address, p {
+        color: @footerParagraphColor;
+        font-size: @footerParagraphFontSize;
+        line-height: @footerLineHeight;
+        margin-bottom: @footerMarginBottom;
+    }
+
+    .left-footer-title {
+        font-size: @footerLeftTitleFontSize;
+        color: @footerLeftTitleColor;
+        font-weight: @footerLeftTitleFontWeight;
+        margin-bottom: @footerLeftTitleMarginBottom;
+        margin-top: @footerLeftTitleMarginTop;
+        line-height: @footerLeftTitleLineHeight;
+    }
+
+    .right-footer-title {
+        font-family: @footerRightTitleFontFamily;
+        font-size: @footerRightTitleFontSize;
+        color: @footerRightTitleColor;
+        font-weight: @footerRightTitleFontWeight;
+        text-transform: @footerRightTitleTextTransform;
+        margin-bottom: @footerRightTitleMarginBottom;
+        margin-top: @footerRightTitleMarginTop;
+        line-height: @footerRightTitleLineHeight;
+    }
+
+    a {
+        color: @footerLinkColor;
+        text-decoration: @footerLinkTextDecoration;
+        line-height: @footerLinkLineHeight !important;
+
+        &:hover,
+        &:focus,
+        &:active:focus {
+            text-decoration: @footerLinkHoverTextDecoration;
+        }
+    }
+
+    .footer-wrapper.flex-grid-thirds {
+        display: flex;
+        justify-content: space-between;
+
+        .footer-address {
+            width: 65%;
+        }
+
+        .explore-section, .vacancies-section {
+            text-align: right;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    #footer {
+        padding-left: 25px;
+        padding-right: 25px;
+
+        .footer-wrapper.flex-grid-thirds {
+            display: block;
+
+            .footer-address, .explore-section, .vacancies-section {
+                width: 100%;
+            }
+        }
+
+        .footer-wrapper.flex-grid-thirds {
+            .explore-section, .vacancies-section {
+                text-align: left;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media(min-width: 769px) {
+    #footer {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+@media(min-width: 1200px) {
+    #footer {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+

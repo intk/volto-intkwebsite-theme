@@ -40,7 +40,8 @@
   "workspaces": [],
   "addons": [
     "@eeacms/volto-block-image-cards",
-    "@kitconcept/volto-blocks-grid"
+    "@kitconcept/volto-blocks-grid",
+    "volto-subfooter"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -140,9 +141,10 @@
     "node": "^12 || ^14 || ^16"
   },
   "dependencies": {
-    "@eeacms/volto-block-image-cards": "^1.0.0",
+    "@eeacms/volto-block-image-cards": "*",
     "@kitconcept/volto-blocks-grid": "2.4.1",
-    "@plone/volto": "14.2.2"
+    "@plone/volto": "14.2.2",
+    "volto-subfooter": "1.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.3.0",
