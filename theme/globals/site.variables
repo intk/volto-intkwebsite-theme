@@ -50,6 +50,7 @@
         Page
 --------------------*/
 @textColor: @gray;
+@contentCoreMarginTop: 35px;
 
 /*--------------
   Page Heading

@@ -8,7 +8,7 @@ import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { Logo, Title } from '@plone/volto/components';
+import { Logo, Title, Navigation } from '@plone/volto/components';
 
 /**
  * Header component class.
@@ -54,6 +54,7 @@ class Header extends Component {
               <div className="logo">
                 <Logo />
               </div>
+              <Navigation pathname={this.props.pathname} />
             </div>
             <div className="title-nav-wrapper">
               <Title title={this.props.content?.title} />

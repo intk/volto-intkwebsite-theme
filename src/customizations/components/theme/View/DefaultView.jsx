@@ -49,27 +49,29 @@ const DefaultView = ({ content, intl, location }) => {
           />
         </div>
       )}
-      {map(content[blocksLayoutFieldname].items, (block) => {
-        const Block =
-          config.blocks.blocksConfig[
-            content[blocksFieldname]?.[block]?.['@type']
-          ]?.['view'] || null;
-        return Block !== null ? (
-          <Block
-            key={block}
-            id={block}
-            properties={content}
-            data={content[blocksFieldname][block]}
-            path={getBaseUrl(location?.pathname || '')}
-          />
-        ) : (
-          <div key={block}>
-            {intl.formatMessage(messages.unknownBlock, {
-              block: content[blocksFieldname]?.[block]?.['@type'],
-            })}
-          </div>
-        );
-      })}
+      <div className="content-core">
+        {map(content[blocksLayoutFieldname].items, (block) => {
+          const Block =
+            config.blocks.blocksConfig[
+              content[blocksFieldname]?.[block]?.['@type']
+            ]?.['view'] || null;
+          return Block !== null ? (
+            <Block
+              key={block}
+              id={block}
+              properties={content}
+              data={content[blocksFieldname][block]}
+              path={getBaseUrl(location?.pathname || '')}
+            />
+          ) : (
+            <div key={block}>
+              {intl.formatMessage(messages.unknownBlock, {
+                block: content[blocksFieldname]?.[block]?.['@type'],
+              })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   ) : (
     <Container id="page-document">

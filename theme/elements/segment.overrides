@@ -70,36 +70,36 @@
     }
 
     .footer-wrapper.flex-grid-thirds {
-        display: flex;
-        justify-content: space-between;
+        display: @footerWrapperDisplay;
+        justify-content: @footerWrapperJustifyContent;
 
         .footer-address {
-            width: 65%;
+            width: @footerAddressWidth;
         }
 
         .explore-section, .vacancies-section {
-            text-align: right;
+            text-align: @footerWrapperSectionsTextAlign;
         }
     }
 }
 
 @media(max-width: 768px) {
     #footer {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: @footerPaddingLeftMobile;
+        padding-right: @footerPaddingRightMobile;
 
         .footer-wrapper.flex-grid-thirds {
-            display: block;
+            display: @footerWrapperDisplayMobile;
 
             .footer-address, .explore-section, .vacancies-section {
-                width: 100%;
+                width: @footerWrapperSectionsWidthMobile;
             }
         }
 
         .footer-wrapper.flex-grid-thirds {
             .explore-section, .vacancies-section {
-                text-align: left;
-                margin-top: 30px;
+                text-align: @footerWrapperSectionsTextAlignMobile;
+                margin-top: @footerWrapperSectionsMarginTopMobile;
             }
         }
     }
@@ -107,15 +107,15 @@
 
 @media(min-width: 769px) {
     #footer {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: @footerPaddingLeftMobile;
+        padding-right: @footerPaddingRightMobile;
     }
 }
 
 @media(min-width: 1200px) {
     #footer {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: @footerPaddingLeftLarge;
+        padding-right: @footerPaddingRightLarge;
     }
 }
 

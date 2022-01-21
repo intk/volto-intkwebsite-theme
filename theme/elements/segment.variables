@@ -41,7 +41,19 @@
 
 @footerWrapperDisplay: flex;
 @footerWrapperJustifyContent: space-between;
+@footerWrapperSectionsTextAlign: right;
+@footerWrapperDisplayMobile: block;
+@footerWrapperSectionsTextAlignMobile: left;
+@footerWrapperSectionsMarginTopMobile: 30px;
+@footerWrapperSectionsWidthMobile: 100%;
+
 @footerAddressWidth: 65%;
+
+@footerPaddingLeftMobile: 25px;
+@footerPaddingRightMobile: 25px;
+
+@footerPaddingLeftLarge: 100px;
+@footerPaddingRightLarge: 100px;
 
 @footerUiSegmentPadding: 0px;
 @footerUiSegmentMargin: 0px;
