@@ -7,6 +7,12 @@
 @segmentSideBarMetadataContainerImgMaxWidth: 50%;
 
 /*-------------------
+      Listing
+--------------------*/
+@listingItemImageMarginRight: 0px;
+@listingItemImageWidth: 100%;
+
+/*-------------------
       Footer
 --------------------*/
 @footerTextColor: #ffffff;

@@ -15,6 +15,7 @@ import config from '@plone/volto/registry';
 import { getNavigation } from '@plone/volto/actions';
 import { CSSTransition } from 'react-transition-group';
 import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
+import { LanguageSelector } from '@plone/volto/components';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -165,6 +166,9 @@ class Navigation extends Component {
         >
           <div key="mobile-menu-key" className="mobile-menu">
             <BodyClass className="has-mobile-menu-open" />
+            <div className="language-selector-nav">
+              <LanguageSelector />
+            </div>
             <div className="mobile-menu-nav">
               <Menu stackable pointing secondary onClick={this.closeMobileMenu}>
                 <NavItems items={this.props.items} lang={this.props.lang} />

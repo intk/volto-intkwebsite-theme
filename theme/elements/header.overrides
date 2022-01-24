@@ -73,8 +73,6 @@ div[role="navigation"].breadcrumbs {
     Menu
 --------------------*/
 
-
-
 .ui.basic.segment.header-wrapper {
     .mobile-menu {
         background-color: @primaryColor;
@@ -191,9 +189,128 @@ body.has-mobile-menu-open {
 }
 
 /*-------------------
+    Language selector
+--------------------*/
+
+.language-selector-nav {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+
+    .language-selector {
+        a {
+            color: #ffffff;
+            text-transform: uppercase;
+            display: block;
+            font-size: 14px;
+            padding: 5px 15px;
+            line-height: 1.0;
+            font-weight: 400;
+        }
+
+        a {
+            &:hover,
+            &:focus,
+            &:active {
+                color: #ffffff;
+                text-decoration: underline;
+            }
+
+            &.selected {
+                display: none;
+            }
+
+            &:not(:last-child):after {
+                content: "";
+            }
+        }
+
+        .accordion .title, 
+        .ui.accordion .title:not(.ui) {
+            color: #ffffff;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.0;
+            padding: 10px 15px;
+            min-width: 110px;
+        }
+        .ui.accordion .content {
+            transition: opacity .3s ease-in-out;
+            opacity: 0;
+        }
+
+        .ui.accordion .content.active {
+            opacity: 1;
+        }
+
+        .ui.accordion .accordion .active.title .dropdown.icon, 
+        .ui.accordion .active.title .dropdown.icon, 
+        .ui.accordion.menu .item .active.title>.dropdown.icon,
+        .ui.accordion .accordion .title .dropdown.icon, 
+        .ui.accordion .title .dropdown.icon {
+            font-weight: 700;
+        }
+
+        .ui.accordion .accordion .title .dropdown.icon:before, 
+        .ui.accordion .title .dropdown.icon:before {
+            content: "\e958" !important;
+        }
+
+        .ui.accordion .accordion .active.title .dropdown.icon, 
+        .ui.accordion .active.title .dropdown.icon {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+    }
+}
+
+html[lang="en"] {
+    .language-selector-nav .language-selector {
+        .accordion .title, 
+        .ui.accordion .title:not(.ui) {
+            width: 110px;
+        }
+    }
+}
+
+body.has-toolbar {
+    .language-selector-nav {
+        left: 100px;
+    }
+}
+
+body.has-toolbar-collapsed {
+    .language-selector-nav {
+        left: 50px;
+    }
+}
+
+/*-------------------
     Mobile queries
 --------------------*/
 @media(max-width: 991px) {
+    .language-selector-nav {
+        top: 25px;
+        left: 5px;
+        .language-selector {
+            a {
+                display: inline-block;
+            }
+        }
+    }
+
+    body.has-toolbar .language-selector-nav {
+        top: 125px;
+        left: 5px;
+    }
+
+    body.has-toolbar-collapsed .language-selector-nav {
+        top: 40px;
+        left: 5px;
+    }
 
     /* Menu */
     .ui.basic.segment.header-wrapper {
