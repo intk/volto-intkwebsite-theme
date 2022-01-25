@@ -15,30 +15,51 @@ import { flattenToAppURL } from '@plone/volto/helpers';
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const ListingView = ({ content }) => (
+const ListingView = ({ content, location, token, history }) => (
   <Container id="page-home">
     <section id="content-core">
       <Grid stackable columns={3}>
         {content.items.map((item) => (
           <Grid.Column mobile={12} tablet={6} computer={4} key={item.url}>
-              {item.image_field && (
-                <Segment basic className="listing-item">
-                    <Link to={item.url} title={item.title}>
+            {item.image_field && (
+              <Segment
+                basic
+                className={
+                  !token && item['@type'] === 'testimonial'
+                    ? 'listing-item no-link'
+                    : 'listing-item'
+                }
+              >
+                {!token && item['@type'] === 'testimonial' ? (
+                  <Image
+                    alt={item.title}
+                    src={`${flattenToAppURL(item['@id'])}/@@images/${
+                      item.image_field
+                    }/teaser`}
+                    loading="lazy"
+                  />
+                ) : (
+                  <Link to={item.url} title={item.title}>
                     <Image
-                        alt={item.title}
-                        src={`${flattenToAppURL(item['@id'])}/@@images/${
+                      alt={item.title}
+                      src={`${flattenToAppURL(item['@id'])}/@@images/${
                         item.image_field
-                        }/teaser`}
-                        loading="lazy"
+                      }/teaser`}
+                      loading="lazy"
                     />
-                    </Link>
-                </Segment>
-              )}
+                  </Link>
+                )}
+              </Segment>
+            )}
             <Segment basic className="listing-item-content">
               <h2>
-                <Link to={item.url} title={item.title}>
-                  {item.title}
-                </Link>
+                {!token && item['@type'] === 'testimonial' ? (
+                  <>{item.title}</>
+                ) : (
+                  <Link to={item.url} title={item.title}>
+                    {item.title}
+                  </Link>
+                )}
               </h2>
               {item.description && <p>{item.description}</p>}
             </Segment>

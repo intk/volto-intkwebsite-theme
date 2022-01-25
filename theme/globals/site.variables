@@ -31,6 +31,7 @@
 --------------------*/
 @emSize: 16px;
 @fontSize: 16px;
+@uiHeaderSize: 1.28571429em;
 
 /*-------------------
       Body text

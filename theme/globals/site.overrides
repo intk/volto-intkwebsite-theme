@@ -1,7 +1,9 @@
 /*******************************
         INTK Theme Overrides
 *******************************/
-#page-document, #page-edit {
+#page-document, 
+#page-edit, 
+#page-add {
     font-weight: @normal;
     -webkit-font-smoothing: @bodyFontSmoothing;
 }
@@ -13,7 +15,17 @@
 /*******************************
              Text
 *******************************/
-#page-document, #page-edit {
+
+#main,
+.ui.page.modals {
+    .ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        font-size: @uiHeaderSize;
+    }
+}
+
+#page-document, 
+#page-edit, 
+#page-add {
     p, li {
         font-size: @textSize;
         line-height: @textLineHeight;
@@ -25,6 +37,10 @@
         font-family: @headingsFont;
         font-weight: @headingsFontWeight;
         line-height: @headingsLineHeight;
+    }
+
+    h2.testimonial-block {
+        margin-bottom: 5px !important;
     }
 
     a {
@@ -68,8 +84,10 @@
     }
 }
 
-
-#page-document, #page-edit, #content {
+#page-document, 
+#page-edit, 
+#content, 
+#page-add {
     h1.documentFirstHeading {
         font-family: @headingsFont;
         font-weight: @headingsFontWeight;
@@ -109,7 +127,8 @@
     }
 }
 
-#page-edit {
+#page-edit, 
+#page-add {
     .full-width {
         right: @editFullWidthImgRight;
         left: @editFullWidthImgLeft;

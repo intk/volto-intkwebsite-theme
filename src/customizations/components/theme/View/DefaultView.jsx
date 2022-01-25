@@ -75,12 +75,17 @@ const DefaultView = ({ content, intl, location }) => {
     </div>
   ) : (
     <Container id="page-document">
-      {content.image && (
-        <Image
-          className="document-image"
-          src={content.image.scales.thumb.download}
-          floated="right"
-        />
+      {content.preview_image && (
+        <div className="full-width">
+          <Image
+            className="full-width lead-image"
+            src={content.preview_image.scales.large.download}
+            loading="lazy"
+            alt={
+              content.preview_caption ? content.preview_caption : content.title
+            }
+          />
+        </div>
       )}
       {content.remoteUrl && (
         <span>

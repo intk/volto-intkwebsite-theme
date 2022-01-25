@@ -66,6 +66,8 @@ div[role="navigation"].breadcrumbs {
         color: @descriptionNavColor;
         margin-bottom: @descriptionNavMarginBottom;
         width: @descriptionNavWidth;
+        max-width: 850px;
+        margin: 0 auto;
     }
 }
 
@@ -160,7 +162,6 @@ div[role="navigation"].breadcrumbs {
     }
 }
 
-body.has-mobile-menu-open, 
 body.has-toolbar-menu-open {
     overflow: hidden;
 }
