@@ -22,7 +22,9 @@
     font-smoothing: antialiased;
 }
 
-#page-home .ui.grid {
+#page-home .ui.grid,
+#page-document .ui.grid.listings,
+#page-edit .ui.grid.listings {
     margin-bottom: 50px;
     
     .listing-item img {
@@ -30,12 +32,7 @@
         margin-right: @listingItemImageMarginRight;
     }
 
-    .ui.segment.listing-item {
-        padding-top: 100%;
-        padding-bottom: 0px;
-        position: relative !important;
-        margin: 0px;
-        
+    .ui.segment.listing-item:not(.listing-block) {
         transition: all 0.2s ease-out;
         background-color: #f7f7f7;
         border-radius: 0px;
@@ -49,20 +46,19 @@
             }
         }
 
+        a,
         &.no-link {
             img {
-                position: absolute;
-                top: 0;
-                display: flex;
-                left: 0;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
                 padding: 14px;
-                object-fit: cover;
             }
         }
+    }
+
+    .ui.segment.listing-item {
+        padding-top: 100%;
+        padding-bottom: 0px;
+        position: relative !important;
+        margin: 0px;
 
         a {
             position: absolute;
@@ -73,13 +69,26 @@
             align-items: center;
             width: 100%;
             height: 100%;
-            padding: 14px;
 
             img {
                 width: auto;
                 height: auto;
                 max-width: 100%;
                 max-height: 100%;
+            }
+        }
+
+        &.no-link {
+            img {
+                position: absolute;
+                top: 0;
+                display: flex;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -95,6 +104,8 @@
             margin-top: 15px;
             line-height: 1.5;
             color: @primaryColor;
+            text-transform: none;
+            font-family: "Lato", 'Helvetica Neue', Arial, Helvetica, sans-serif;
         }
 
         p {
@@ -267,6 +278,47 @@
     }
 }
 
+/*-------------------
+    Blocks (Buttons)
+--------------------*/
+#page-document .ui.grid.listing-buttons,
+#page-edit .ui.grid.listing-buttons,
+#page-add .ui.grid.listing-buttons {
+
+    .listing-button-column {
+        margin-right: 0px;
+        padding-right: 0px;
+
+        a.ui.button {
+            text-decoration: none;
+            font-family: 'Lato','Helvetica Neue',Arial,Helvetica,sans-serif;
+            font-weight: 400;
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 9px 20px;
+            margin: 10px 5px 10px 1px;
+            color: #999;
+            border-bottom: 0px !important;
+            border: 1px solid #ededed !important;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            line-height: 20px;
+            letter-spacing: 1px;
+            font-size: 14px;
+
+            &:hover,
+            &:focus,
+            &:active:focus {
+                text-decoration: none;
+                background: transparent;
+                color: #242424 !important;
+                text-decoration: none !important;
+                border: 1px solid #000000 !important;
+            }
+        }
+    }
+}
 
 /*-------------------
     Media queries
@@ -343,6 +395,8 @@
     }
 }
 
+
+
 @media(min-width: 1200px) {
     #footer {
         padding-left: @footerPaddingLeftLarge;
@@ -358,6 +412,19 @@
     #main #page-add .ui.testimonials {
         margin-left: 0px;
         margin-right: 0px;
+    }
+
+    #main #page-edit .ui.grid.listings,
+    #main #page-add .ui.grid.listings {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #page-document .ui.grid.listing-buttons,
+    #page-edit .ui.grid.listing-buttons,
+    #page-add .ui.grid.listing-buttons {
+        padding-top: 20px;
+        padding-bottom: 30px;
     }
 }
 

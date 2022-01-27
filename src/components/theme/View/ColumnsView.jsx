@@ -7,7 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
 
-import { Container, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
 
@@ -27,34 +27,16 @@ const messages = defineMessages({
 
 /**
  * Component to display the default view.
- * @function DefaultView
+ * @function ColumnsView
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const DefaultView = ({ content, intl, location }) => {
+const ColumnsView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
-  const structuredDataTitle = 'Software Developer';
-  const structuredData =
-    '{"@context":"https://schema.org/","@type":"JobPosting","title":"Software Developer","description":"Create software that will revolutionize museums, cinemas, and festivals.","datePosted":"2022-01-17","validThrough":"2499-12-31","employmentType":"FULL_TIME","hiringOrganization":{"type":"Organization","name":"INTK","sameAs":"https://www.intk.com","logo":"https://www.intk.com/logo.png"},"jobLocation":{"@type":"Place","address":{"streetAddress":"Beatrixgebouw 6de etage, Jaarbeursplein 6","addressLocality":"Utrecht","addressRegion":"Utrecht","postalCode":"3521 AL","addressCountry":"NL"}}}';
 
   return hasBlocksData(content) ? (
-    <div id="page-document" className="ui container">
-      {content.title === structuredDataTitle && (
-        <script type="application/ld+json">{structuredData}</script>
-      )}
-
-      {content.preview_image && (
-        <div className="full-width">
-          <Image
-            className="full-width lead-image"
-            src={content.preview_image.scales.large.download}
-            alt={
-              content.preview_caption ? content.preview_caption : content.title
-            }
-          />
-        </div>
-      )}
+    <div id="page-document" className="ui container columns-view">
       <div className="content-core">
         {map(content[blocksLayoutFieldname].items, (block) => {
           const Block =
@@ -80,19 +62,7 @@ const DefaultView = ({ content, intl, location }) => {
       </div>
     </div>
   ) : (
-    <Container id="page-document">
-      {content.preview_image && (
-        <div className="full-width">
-          <Image
-            className="full-width lead-image"
-            src={content.preview_image.scales.large.download}
-            loading="lazy"
-            alt={
-              content.preview_caption ? content.preview_caption : content.title
-            }
-          />
-        </div>
-      )}
+    <Container id="page-document columns-view">
       {content.remoteUrl && (
         <span>
           The link address is:
@@ -115,7 +85,7 @@ const DefaultView = ({ content, intl, location }) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-DefaultView.propTypes = {
+ColumnsView.propTypes = {
   /**
    * Content of the object
    */
@@ -140,4 +110,4 @@ DefaultView.propTypes = {
   }).isRequired,
 };
 
-export default injectIntl(DefaultView);
+export default injectIntl(ColumnsView);

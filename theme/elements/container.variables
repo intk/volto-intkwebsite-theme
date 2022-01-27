@@ -3,3 +3,17 @@
 *******************************/
 
 @containerMaxSize: 640px;
+@uiContainerMaxSize: 1140px;
+@uiContainerMarginLeftDesktop: auto;
+@uiContainerMarginRightDesktop: auto;
+@columnsViewWidth: 100%;
+@columnsViewPaddingLeftMobile: 15px;
+@columnsViewPaddingRightMobile: 15px;
+@columnsViewMargin: 0px;
+@columnsViewPaddingLeftTablet: 25px;
+@columnsViewPaddingRightTablet: 25px;
+@columnsViewPaddingLeftDesktop: 120px;
+@columnsViewPaddingRightDesktop: 120px;
+@columnsViewContentCoreMarginTop: 0px;
+@columnsViewMaxWidthDesktop: 1540px;
+@columnsViewMarginDesktop: 0 auto;

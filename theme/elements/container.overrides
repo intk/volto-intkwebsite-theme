@@ -2,14 +2,63 @@
         INTK Theme Overrides
 *******************************/
 
-@media only screen and (min-width: 1280px) {
-    body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
+/*-------------------
+    Main container
+--------------------*/
+.ui.container {
+  transition: none !important;
+}
+
+/*-------------------
+    Columns view
+--------------------*/
+#page-document.columns-view {
+  width: @columnsViewWidth !important;
+  padding-left: @columnsViewPaddingLeftMobile;
+  padding-right: @columnsViewPaddingRightMobile;
+  margin: @columnsViewMargin !important;
+}
+
+/*-------------------
+    Media queries
+--------------------*/
+@media(min-width: 769px) {
+  #page-document.columns-view {
+    padding-left: @columnsViewPaddingLeftTablet;
+    padding-right: @columnsViewPaddingRightTablet;
+  }
+}
+
+@media(min-width: 992px) {
+  #page-document.columns-view {
+    .content-core {
+      margin-top: @columnsViewContentCoreMarginTop;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed):not(.section-contents) #page-document:not(.columns-view) {
+    width: @containerMaxSize !important;
+  }
+
+  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
+    width: @uiContainerMaxSize !important;
+    margin-right: @uiContainerMarginLeftDesktop !important;
+    margin-left: @uiContainerMarginRightDesktop !important;
+  }
+
+  #page-document.columns-view {
+    padding-left: @columnsViewPaddingLeftDesktop;
+    padding-right: @columnsViewPaddingRightDesktop;
+    max-width: @columnsViewMaxWidthDesktop !important;
+    margin: @columnsViewMarginDesktop !important;
+  }
+}
+
+@media(min-width: 1280px) {
+    body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed):not(.section-contents) #page-document:not(.columns-view) {
       width: @containerMaxSize !important;
     }
 }
 
-@media only screen and (min-width: 1200px) {
-    body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed):not(.section-contents) #page-document {
-      width: @containerMaxSize !important;
-    }
-}

@@ -25,12 +25,14 @@ const ListingView = ({ content, location, token, history }) => (
               <Segment
                 basic
                 className={
-                  !token && item['@type'] === 'testimonial'
+                  !token &&
+                  ['testimonial', 'organization'].includes(item['@type'])
                     ? 'listing-item no-link'
                     : 'listing-item'
                 }
               >
-                {!token && item['@type'] === 'testimonial' ? (
+                {!token &&
+                ['testimonial', 'organization'].includes(item['@type']) ? (
                   <Image
                     alt={item.title}
                     src={`${flattenToAppURL(item['@id'])}/@@images/${
@@ -53,7 +55,8 @@ const ListingView = ({ content, location, token, history }) => (
             )}
             <Segment basic className="listing-item-content">
               <h2>
-                {!token && item['@type'] === 'testimonial' ? (
+                {!token &&
+                ['testimonial', 'organization'].includes(item['@type']) ? (
                   <>{item.title}</>
                 ) : (
                   <Link to={item.url} title={item.title}>

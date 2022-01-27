@@ -1,24 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
-
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import { Grid, Image, Segment } from 'semantic-ui-react';
 
 const TestimonialsTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
-  let link = null;
-  let href = linkHref?.[0]?.['@id'] || '';
-
-  if (isInternalURL(href)) {
-    link = (
-      <ConditionalLink to={flattenToAppURL(href)} condition={!isEditMode}>
-        {linkTitle || href}
-      </ConditionalLink>
-    );
-  } else if (href) {
-    link = <a href={href}>{linkTitle || href}</a>;
-  }
   return (
     <>
       <Grid stackable columns={2} className="items testimonials">

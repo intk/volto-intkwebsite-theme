@@ -8,3 +8,5 @@
  *   Footer,
  * };
  */
+import ColumnsView from './theme/View/ColumnsView';
+export { ColumnsView };

@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
-import { Container, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import URLUtils from '@plone/volto/components/manage/AnchorPlugin/utils/URLUtils';
 import { FormattedMessage } from 'react-intl';
 
