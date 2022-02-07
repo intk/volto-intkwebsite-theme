@@ -13,7 +13,7 @@ const ButtonsTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             <Link
               title={item.title}
               to={flattenToAppURL(item['@id'])}
-              className="ui button"
+              className="ui button rounded-button"
             >
               {item.title}
             </Link>

@@ -26,6 +26,170 @@ const messages = defineMessages({
 const Footer = ({ intl }) => {
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
+
+  const footerLinks = {
+    'explore': {
+      'en': 'Explore',
+      'nl': 'Ontdek',
+      'nl-be': 'Ontdek',
+      'es': 'Explorar',
+      'it': 'Esplorare',
+      'pt': 'Explorar',
+    },
+    'vacancies': {
+      'en': 'Vacancies',
+      'nl': 'Werken bij',
+      'nl-be': 'Werken bij',
+      'es': 'Empleo',
+      'it': 'Lavori',
+      'pt': 'Emprego',
+    },
+    'services': {
+      'en': {
+        'link':'services',
+        'text': 'Services',
+      },
+      'nl': {
+        'link':'diensten',
+        'text': 'Diensten'
+      },
+      'nl-be': {
+        'link':'diensten',
+        'text': 'Diensten'
+      },
+      'es': {
+        'link':'servicios',
+        'text': 'Servicios (inglés)'
+      },
+      'it': {
+        'link':'servizi',
+        'text': 'Servizi (inglese)'
+      },
+      'pt': {
+        'link':'servicos',
+        'text': 'Serviços'
+      },
+    },
+    'ideas': {
+      'en': {
+        'link':'ideas',
+        'text': 'Ideas'
+      },
+      'nl': {
+        'link':'ideeen',
+        'text': 'Ideeën'
+      },
+      'nl-be': {
+        'link':'ideeen',
+        'text': 'Ideeën'
+      },
+      'es': {
+        'link':'ideas',
+        'text': 'Ideas (inglés)'
+      },
+      'it': {
+        'link':'idee',
+        'text': 'Idee (inglese)'
+      },
+      'pt': {
+        'link':'ideias',
+        'text': 'Ideias'
+      },
+    },
+    'organizations': {
+      'en': {
+        'link':'organizations',
+        'text': 'Organizations'
+      },
+      'nl': {
+        'link':'organisaties',
+        'text': 'Organisaties'
+      },
+      'nl-be': {
+        'link':'organisaties',
+        'text': 'Organisaties'
+      },
+      'es': {
+        'link':'organizaciones',
+        'text': 'Organizaciones'
+      },
+      'it':{
+        'link':'organizzazioni',
+        'text': 'Organizzazioni'
+      },
+      'pt': {
+        'link':'organizacoes',
+        'text': 'Organizações'
+      },
+    },
+    'team': {
+      'en': {
+        'link':'team',
+        'text': 'Team'
+      },
+      'nl': {
+        'link':'team',
+        'text': 'Team'
+      },
+      'nl-be': {
+        'link':'team',
+        'text': 'Team'
+      },
+      'es': {
+        'link':'equipo',
+        'text': 'Equipo'
+      },
+      'it': {
+        'link':'squadra',
+        'text': 'Squadra'
+      },
+      'pt': {
+        'link':'equipa',
+        'text': 'Equipa'
+      },
+    },
+    'internships': {
+      'en': {
+        'text': 'Internships'
+      },
+      'nl': {
+        'text': 'Stages'
+      },
+      'nl-be': {
+        'text': 'Stages'
+      },
+      'es': {
+        'text': 'Prácticas'
+      },
+      'it': {
+        'text': 'Tirocini'
+      },
+      'pt': {
+        'text': 'Estágios'
+      },
+    },
+    'jobpositions': {
+      'en': {
+        'text': 'Job positions'
+      },
+      'nl': {
+        'text': 'Vacatures'
+      },
+      'nl-be': {
+        'text': 'Vacatures'
+      },
+      'es': {
+        'text': 'Puestos de trabajo'
+      },
+      'it': {
+        'text': 'Posizioni lavorative'
+      },
+      'pt': {
+        'text': 'Ofertas de emprego'
+      },
+    },
+  }
+
   return (
     <Segment
       role="contentinfo"
@@ -47,34 +211,30 @@ const Footer = ({ intl }) => {
               </p>
             </div>
             <div className="explore-section">
-              <p className="right-footer-title">Explore</p>
+              <p className="right-footer-title">{footerLinks['explore'][lang]}</p>
               <p>
                 <Link
-                  to={
-                    settings.isMultilingual ? `/${lang}/services` : '/services'
-                  }
+                  to={settings.isMultilingual ? `/${lang}/${footerLinks['services'][lang]['link']}` : '/services'}
                 >
-                  Services
+                  {footerLinks['services'][lang]['text']}
                 </Link>
                 <br></br>
-                <Link
-                  to={settings.isMultilingual ? `/${lang}/ideas` : '/ideas'}
-                >
-                  Ideas
+                <Link to={settings.isMultilingual ? `/${lang}/${footerLinks['ideas'][lang]['link']}` : '/ideas'}>
+                {footerLinks['ideas'][lang]['text']}
                 </Link>
                 <br></br>
                 <Link
                   to={
                     settings.isMultilingual
-                      ? `/${lang}/organizations`
+                      ? `/${lang}/${footerLinks['organizations'][lang]['link']}`
                       : '/organizations'
                   }
                 >
-                  Organizations
+                 {footerLinks['organizations'][lang]['text']}
                 </Link>
                 <br></br>
-                <Link to={settings.isMultilingual ? `/${lang}/team` : '/team'}>
-                  Team
+                <Link to={settings.isMultilingual ? `/${lang}/${footerLinks['team'][lang]['link']}` : '/team'}>
+                  {footerLinks['team'][lang]['text']}
                 </Link>
               </p>
             </div>
@@ -84,21 +244,21 @@ const Footer = ({ intl }) => {
                 <Link
                   to={
                     settings.isMultilingual
-                      ? `/${lang}/vacancies/interships`
+                      ? `/en/vacancies/internships`
                       : '/vacancies/internships'
                   }
                 >
-                  Internships
+                  {footerLinks['internships'][lang]['text']}
                 </Link>
                 <br></br>
                 <Link
                   to={
                     settings.isMultilingual
-                      ? `/${lang}/vacancies/job-positions`
+                      ? `/en/vacancies/job-positions`
                       : '/vacancies/job-positions'
                   }
                 >
-                  Job positions
+                  {footerLinks['jobpositions'][lang]['text']}
                 </Link>
               </p>
             </div>

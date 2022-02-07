@@ -6,10 +6,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-
+import { BodyClass } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
+
+import WebSlidesComponent from '../WebSlides/WebSlides';
 
 import {
   getBlocksFieldname,
@@ -20,50 +22,30 @@ import {
 
 /**
  * Component to display the default view.
- * @function ColumnsView
+ * @function WebslidesView
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const ColumnsView = ({ content, intl, location }) => {
-  const blocksFieldname = getBlocksFieldname(content);
+
+const WebslidesView = ({ content, intl, location }) => {
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
+  const webslidesItems = content[blocksLayoutFieldname].items;
+  /*componentWillUnmount() {
+    document.documentElement.classList.remove('ws-ready');
+  }*/
 
   return hasBlocksData(content) ? (
-    <div
-      id="page-document"
-      className={`ui container columns-view ${
-        content.subjects?.includes('alternate-color') ? 'alternate-color' : ''
-      } ${content.subjects?.includes('header-button') ? 'header-button' : ''}`}
-    >
+    <>
+      <BodyClass className={`webslides_view`} />
       <div
-        className={
-          content.subjects?.includes('wideimage')
-            ? 'content-core wideimage'
-            : 'content-core'
-        }
+        id="page-document"
+        className="ui container webslides-view columns-view"
       >
-        {map(content[blocksLayoutFieldname].items, (block) => {
-          const Block =
-            config.blocks.blocksConfig[
-              content[blocksFieldname]?.[block]?.['@type']
-            ]?.['view'] || null;
-          return Block !== null &&
-            content[blocksFieldname][block]['@type'] !== 'title' ? (
-            <Block
-              key={block}
-              id={block}
-              properties={content}
-              data={content[blocksFieldname][block]}
-              path={getBaseUrl(location?.pathname || '')}
-            />
-          ) : (
-            ''
-          );
-        })}
+        <WebSlidesComponent items={webslidesItems} />
       </div>
-    </div>
+    </>
   ) : (
-    <Container id="page-document columns-view">
+    <Container id="page-document webslides-view columns-view">
       {content.remoteUrl && (
         <span>
           The link address is:
@@ -86,7 +68,7 @@ const ColumnsView = ({ content, intl, location }) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-ColumnsView.propTypes = {
+WebslidesView.propTypes = {
   /**
    * Content of the object
    */
@@ -111,4 +93,4 @@ ColumnsView.propTypes = {
   }).isRequired,
 };
 
-export default injectIntl(ColumnsView);
+export default injectIntl(WebslidesView);

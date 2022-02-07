@@ -5,7 +5,12 @@ import { Grid, Image, Segment, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import SharingButtons from './SharingButtons';
 
-const ListingTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
+const ListingTemplateFourSquares = ({
+  items,
+  linkTitle,
+  linkHref,
+  isEditMode,
+}) => {
   return (
     <>
       <Grid stackable columns={2} className="listings">
@@ -13,7 +18,7 @@ const ListingTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
           <Grid.Column
             mobile={12}
             tablet={6}
-            computer={4}
+            computer={3}
             className="listing-column"
           >
             {item.image_field && (
@@ -23,8 +28,8 @@ const ListingTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                   !['testimonial', 'organization', 'person'].includes(
                     item['@type'],
                   )
-                    ? 'listing-item listing-block'
-                    : 'listing-item listing-block no-link'
+                    ? 'listing-item'
+                    : 'listing-item no-link'
                 }
               >
                 {!['testimonial', 'organization', 'person'].includes(
@@ -78,10 +83,10 @@ const ListingTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   );
 };
 
-ListingTemplate.propTypes = {
+ListingTemplateFourSquares.propTypes = {
   items: PropTypes.arrayOf(PropTypes.any).isRequired,
   linkMore: PropTypes.any,
   isEditMode: PropTypes.bool,
 };
 
-export default ListingTemplate;
+export default ListingTemplateFourSquares;

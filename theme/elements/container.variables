@@ -7,11 +7,11 @@
 @uiContainerMarginLeftDesktop: auto;
 @uiContainerMarginRightDesktop: auto;
 @columnsViewWidth: 100%;
-@columnsViewPaddingLeftMobile: 15px;
-@columnsViewPaddingRightMobile: 15px;
+@columnsViewPaddingLeftMobile: 35px;
+@columnsViewPaddingRightMobile: 35px;
 @columnsViewMargin: 0px;
-@columnsViewPaddingLeftTablet: 25px;
-@columnsViewPaddingRightTablet: 25px;
+@columnsViewPaddingLeftTablet: 35px;
+@columnsViewPaddingRightTablet: 35px;
 @columnsViewPaddingLeftDesktop: 120px;
 @columnsViewPaddingRightDesktop: 120px;
 @columnsViewContentCoreMarginTop: 0px;

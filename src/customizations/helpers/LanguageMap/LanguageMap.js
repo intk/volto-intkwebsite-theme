@@ -633,8 +633,8 @@ const langmap = new Proxy(
       englishName: 'Pashto',
     },
     pt: {
-      nativeName: 'Português',
-      englishName: 'Portuguese',
+      nativeName: 'Portugal',
+      englishName: 'Portugal',
     },
     'pt-BR': {
       nativeName: 'Português (Brasil)',

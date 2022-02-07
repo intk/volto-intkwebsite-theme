@@ -47,7 +47,17 @@ class Header extends Component {
    */
   render() {
     return (
-      <Segment basic className="header-wrapper" role="banner">
+      <Segment
+        basic
+        className={`header-wrapper ${
+          this.props.content?.subjects?.includes('no-title') ? 'no-title' : ''
+        } ${
+          this.props.content?.subjects?.includes('header-button')
+            ? 'header-button'
+            : ''
+        }`}
+        role="banner"
+      >
         <Container>
           <div className="header">
             <div className="logo-nav-wrapper">

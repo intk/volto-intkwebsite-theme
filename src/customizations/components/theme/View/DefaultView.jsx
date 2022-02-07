@@ -11,6 +11,9 @@ import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
 
+import { LeadVideo } from '@package/components';
+import { StructuredData } from '@package/components';
+
 import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
@@ -34,17 +37,12 @@ const messages = defineMessages({
 const DefaultView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
-  const structuredDataTitle = 'Software Developer';
-  const structuredData =
-    '{"@context":"https://schema.org/","@type":"JobPosting","title":"Software Developer","description":"Create software that will revolutionize museums, cinemas, and festivals.","datePosted":"2022-01-17","validThrough":"2499-12-31","employmentType":"FULL_TIME","hiringOrganization":{"type":"Organization","name":"INTK","sameAs":"https://www.intk.com","logo":"https://www.intk.com/logo.png"},"jobLocation":{"@type":"Place","address":{"streetAddress":"Beatrixgebouw 6de etage, Jaarbeursplein 6","addressLocality":"Utrecht","addressRegion":"Utrecht","postalCode":"3521 AL","addressCountry":"NL"}}}';
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
-      {content.title === structuredDataTitle && (
-        <script type="application/ld+json">{structuredData}</script>
-      )}
+      <StructuredData content={content} />
 
-      {content.preview_image && (
+      {content.preview_image && !content.youtube_id && (
         <div className="full-width">
           <Image
             className="full-width lead-image"
@@ -55,6 +53,9 @@ const DefaultView = ({ content, intl, location }) => {
           />
         </div>
       )}
+
+      {content.youtube_id && <LeadVideo content={content} />}
+
       <div className="content-core">
         {map(content[blocksLayoutFieldname].items, (block) => {
           const Block =

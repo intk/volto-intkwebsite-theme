@@ -8,8 +8,40 @@
     -webkit-font-smoothing: @bodyFontSmoothing;
 }
 
-#page-document .content-core {
+#page-document:not(.header-button) .content-core {
     margin-top: @contentCoreMarginTop;
+}
+
+/*******************************
+             Buttons
+*******************************/
+.linkBtn() {
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    height: 45px;
+    display: inline-block;
+    line-height: 43px;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #262626 !important;
+    background-color: #262626;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        background-color: #ffffff;
+        color: #262626 !important;
+    }
 }
 
 /*******************************
@@ -74,6 +106,49 @@
 
     .block.html {
         margin-bottom: @htmlBlockMarginBottom;
+    }
+
+    a.ui.button:not(.rounded-button):not(.team-button) {
+        .linkBtn();
+    }
+
+    .block.html {
+        a.ui.button:not(.rounded-button):not(.team-button) {
+            .linkBtn();
+            line-height: 24px;
+        }
+    }
+
+    .button-block {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 60px;
+        padding-left: 35px;
+        padding-right: 35px;
+
+        @media(max-width: 991px) {
+            justify-content: left;
+        }
+
+        a {
+            .linkBtn();
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+
+    .columns-view .button-block {
+        padding-bottom: 5px;
+
+        a {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media(max-width: 991px) {
+            justify-content: center;
+        }
     }
 }
 

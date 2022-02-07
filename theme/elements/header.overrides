@@ -6,6 +6,15 @@ div[role="navigation"].breadcrumbs {
     display: @displayBreadcrumps;
 }
 
+body.contenttype-lrf {
+    .content-area {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+}
+
 .ui.basic.segment.header-wrapper {
     font-weight: @normal;
     -webkit-font-smoothing: @bodyFontSmoothing;
@@ -14,6 +23,11 @@ div[role="navigation"].breadcrumbs {
     padding-top: @headerPaddingTop;
     padding-bottom: @headerPaddingBottom;
     margin-bottom: @headerMarginBottom;
+
+    &.header-button {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
 
     .logo {
         width: @logoWidth;
@@ -68,6 +82,31 @@ div[role="navigation"].breadcrumbs {
         width: @descriptionNavWidth;
         max-width: 850px;
         margin: 0 auto;
+    }
+
+
+}
+
+
+.ui.basic.segment.header-wrapper.no-title {
+
+    h1.documentFirstHeading {
+        display: none;
+    }
+
+    p.documentDescription {
+        font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.875em;
+        line-height: 45px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+        max-width: 850px;
+        color: #000000;
+
+        @media(max-width: 991px) {
+            padding-top: 0px;
+            padding-bottom: 15px;
+        }
     }
 }
 
