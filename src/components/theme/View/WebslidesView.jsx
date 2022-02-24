@@ -8,17 +8,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { BodyClass } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
-import { map } from 'lodash';
-import config from '@plone/volto/registry';
 
 import WebSlidesComponent from '../WebSlides/WebSlides';
+import './WebSlidesView.less';
 
-import {
-  getBlocksFieldname,
-  getBlocksLayoutFieldname,
-  hasBlocksData,
-  getBaseUrl,
-} from '@plone/volto/helpers';
+import { getBlocksLayoutFieldname, hasBlocksData } from '@plone/volto/helpers';
 
 /**
  * Component to display the default view.

@@ -10,6 +10,7 @@ import { BodyClass } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
 
 import WebSlidesBlocksComponent from '../WebSlides/WebSlidesBlocks';
+import './WebSlidesView.less';
 
 import { hasBlocksData } from '@plone/volto/helpers';
 

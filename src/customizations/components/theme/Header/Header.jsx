@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import { Logo, Title, Navigation } from '@plone/volto/components';
 
 /**
