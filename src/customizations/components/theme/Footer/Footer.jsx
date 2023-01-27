@@ -154,41 +154,53 @@ const Footer = ({ intl }) => {
     internships: {
       en: {
         text: 'Internships',
+        link: '/en/vacancies/internships'
       },
       nl: {
         text: 'Stages',
+        link: '/nl/werken-bij/stages',
       },
       'nl-be': {
         text: 'Stages',
+        link: '/en/vacancies/internships',
       },
       es: {
         text: 'Prácticas',
+        link: '/en/vacancies/internships',
       },
       it: {
         text: 'Tirocini',
+        link: '/en/vacancies/internships',
       },
       pt: {
         text: 'Estágios',
+        link: '/en/vacancies/internships',
       },
     },
     jobpositions: {
       en: {
         text: 'Job positions',
+        link: '/en/vacancies/job-positions'
       },
       nl: {
         text: 'Vacatures',
+        link: '/nl/werken-bij/vacatures'
       },
       'nl-be': {
         text: 'Vacatures',
+        link: '/en/vacancies/job-positions',
       },
       es: {
         text: 'Puestos de trabajo',
+        link: '/en/vacancies/job-positions',
       },
       it: {
         text: 'Posizioni lavorative',
+        link: '/en/vacancies/job-positions',
       },
       pt: {
         text: 'Ofertas de emprego',
+        link: '/en/vacancies/job-positions',
       },
     },
   };
@@ -265,7 +277,7 @@ const Footer = ({ intl }) => {
                 <Link
                   to={
                     settings.isMultilingual
-                      ? `/en/vacancies/internships`
+                      ? `${footerLinks['internships'][lang]['link']}`
                       : '/vacancies/internships'
                   }
                 >
@@ -275,7 +287,7 @@ const Footer = ({ intl }) => {
                 <Link
                   to={
                     settings.isMultilingual
-                      ? `/en/vacancies/job-positions`
+                      ? `${footerLinks['jobpositions'][lang]['link']}`
                       : '/vacancies/job-positions'
                   }
                 >
